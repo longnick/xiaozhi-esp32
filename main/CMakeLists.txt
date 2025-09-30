@@ -36,10 +36,16 @@ set(SOURCES "audio/audio_codec.cc"
             "device_state_event.cc"
             "assets.cc"
             "main.cc"
+            set(SRCS
+    ${SRCS}
+    main/wallpaper_manager.cc
+    main/gif_screensaver.cc
             )
 
 set(INCLUDE_DIRS "." "display" "display/lvgl_display" "display/lvgl_display/jpg" "audio" "protocols")
-
+${INCLUDE_DIRS}
+    main
+    )
 # Add board common files
 file(GLOB BOARD_COMMON_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/boards/common/*.cc)
 list(APPEND SOURCES ${BOARD_COMMON_SOURCES})
